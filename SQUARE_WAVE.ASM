@@ -1,0 +1,18 @@
+;SQUARE WAVE CODE
+
+MVI A,80H
+MVI D,04H
+;OUT DB NOT WORKING IN SIMULATOR
+LOOP:	MVI A,00H
+		;OUT D8
+        ;OUT D9
+        CALL DELAY
+        MVI A,FFH
+        DCR D
+        JNZ LOOP
+		
+DELAY:	MVI B,05H
+		BACK:	DCR B
+        		JNZ BACK
+        
+        RET
