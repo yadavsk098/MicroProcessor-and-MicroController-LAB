@@ -1,0 +1,16 @@
+
+LXI H,0000H
+MOV A,M
+MVI C,00H
+
+INX H
+ADD M
+JNC NEXT
+MVI C,01H
+NEXT:	INX H
+		MOV M,A
+		INX H
+		MOV M,C
+        
+
+HLT
